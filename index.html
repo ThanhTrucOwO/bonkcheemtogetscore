@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./assets/css/main.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="to-center">
+<p style="text-align: center;">Score: <a id="clicks">0</a> point</p>
+		<h2>Click để bonk cheems</h2>
+		<div>
+			<div class="one"><img src="./assets/img/1.PNG" alt=""></div>
+			<div class="two"><img src="./assets/img/2.PNG" alt=""></div>
+		</div>
+
+		<br>
+<button type="button" onClick="onClick()">Click me</button>
+	</div>
+</body>
+<script>	
+	function playAudio(url){
+		if (playAudio%2 != 0) {
+  		new Audio(url).play();}
+  	}
+
+  	var timesClicked = 0;
+	$('button').click(function(){
+		$('.two').toggleClass('d-block');
+
+		timesClicked++;
+
+		if(timesClicked %2 != 0){
+			playAudio('./assets/img/bonk.mp3');
+		}
+	});		
+
+var clicks = 0;
+function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = clicks;
+};
+
+</script>
+</html>
